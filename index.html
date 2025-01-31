@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>متجر سيرفر SMM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            --primary-color: #4CAF50;
+            --secondary-color: #ffeb3b;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--main-bg);
+            color: #fff;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px rgba(255,235,59,0.3);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .package-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .package-header {
+            text-align: center;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .features-list i {
+            color: var(--secondary-color);
+            width: 30px;
+            font-size: 1.3rem;
+        }
+
+        .floating-character {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .payment-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .method {
+            transition: transform 0.3s;
+        }
+
+        .method:hover {
+            transform: scale(1.15);
+        }
+
+        .method img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+        }
+
+        .conversion-section {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .conversion-card {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            border: 2px solid var(--primary-color);
+        }
+
+        .conversion-card p {
+            font-size: 1.3rem;
+            margin: 0;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-character">
+        <img src="character.png" alt="شخصية متحركة">
+    </div>
+
+    <div class="container">
+        <h1 class="main-title">🌟 متجر سيرفر SMM المميز</h1>
+        
+        <div class="packages-grid">
+            <!-- الحزمة البرونزية -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">5$</div>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-shield-alt"></i> فل آرمر نذرايت</li>
+                </ul>
+            </div>
+
+            <!-- الحزمة الفضية -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>الباقة المتقدمة</h3>
+                    <div class="price">7$</div>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-shield-alt"></i> فل آرمر نذريات مطورة</li>
+                    <li><i class="fas fa-gem"></i> ستاكن دايموند</li>
+                </ul>
+            </div>
+
+            <!-- الحزمة الذهبية -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>الباقة الذهبية</h3>
+                    <div class="price">10$</div>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-shield-alt"></i> فل آرمر نذريت مطور</li>
+                    <li><i class="fas fa-coins"></i> 100 ألف شوب</li>
+                    <li><i class="fas fa-gem"></i> 3 ستاكات دايموند</li>
+                </ul>
+            </div>
+
+            <!-- الحزمة الماسية -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>الباقة الماسية</h3>
+                    <div class="price">15$</div>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-shield-alt"></i> فل آرمر نذرايت مطور</li>
+                    <li><i class="fas fa-coins"></i> 400 ألف شوب مطور</li>
+                    <li><i class="fas fa-gem"></i> 4 ستاكات دايموند</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="conversion-section">
+            <h2><i class="fas fa-coins"></i> نظام التحويل المالي</h2>
+            <div class="conversion-card">
+                <p>1 دولار = 15 ألف شوب</p>
+            </div>
+        </div>
+
+        <div class="payment-section">
+            <h2><i class="fas fa-credit-card"></i> وسائل الدفع المتاحة</h2>
+            <div class="payment-methods">
+                <div class="method">
+                    <img src="stc-pay.png" alt="STC Pay">
+                </div>
+                <div class="method">
+                    <img src="urpay.png" alt="URPay">
+                </div>
+                <div class="method">
+                    <img src="burraq.png" alt="برق">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
