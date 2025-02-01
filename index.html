@@ -248,19 +248,12 @@
 
         .rating-stars i {
             margin: 0 5px;
+            cursor: pointer;
+            transition: color 0.2s;
         }
 
-        .white-image {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .white-image {
-                display: block;
-                width: 100%;
-                max-width: 300px;
-                margin: 2rem auto;
-            }
+        .rating-stars i.active {
+            color: var(--primary-color);
         }
 
         /* إضافة النجوم والماس المتحركة */
@@ -392,18 +385,36 @@
         <div class="rating-section">
             <h2>التقييم</h2>
             <div class="rating-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star" data-rating="1"></i>
+                <i class="far fa-star" data-rating="2"></i>
+                <i class="far fa-star" data-rating="3"></i>
+                <i class="far fa-star" data-rating="4"></i>
+                <i class="far fa-star" data-rating="5"></i>
             </div>
-        </div>
-
-        <!-- صورة بيضاء تظهر على الهاتف -->
-        <div class="white-image">
-            <img src="white-image.png" alt="صورة بيضاء">
+            <p id="rating-text" style="color: var(--secondary-color); margin-top: 1rem;"></p>
         </div>
     </div>
+
+    <script>
+        // جافا سكريبت لجعل التقييم تفاعليًا
+        const stars = document.querySelectorAll('.rating-stars i');
+        const ratingText = document.getElementById('rating-text');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = star.getAttribute('data-rating');
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.classList.remove('far');
+                        s.classList.add('fas', 'active');
+                    } else {
+                        s.classList.remove('fas', 'active');
+                        s.classList.add('far');
+                    }
+                });
+                ratingText.textContent = `تقييمك: ${rating} من 5`;
+            });
+        });
+    </script>
 </body>
 </html>
