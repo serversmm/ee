@@ -14,13 +14,14 @@
         }
 
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Tajawal', Arial, sans-serif;
             background: var(--main-bg);
             color: #fff;
             min-height: 100vh;
             margin: 0;
             overflow-x: hidden;
             position: relative;
+            font-size: 16px;
         }
 
         /* خلفية متحركة */
@@ -82,8 +83,8 @@
 
         .main-title {
             text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--secondary-color);
             text-shadow: 0 0 15px rgba(255,235,59,0.3);
         }
@@ -91,8 +92,8 @@
         .packages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .package-card {
@@ -117,7 +118,7 @@
         }
 
         .price {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: bold;
             color: var(--primary-color);
             margin: 1rem 0;
@@ -139,7 +140,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
             position: relative;
             padding-right: 40px;
         }
@@ -162,55 +163,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 200px;
+            width: 150px;
             animation: float 3s ease-in-out infinite;
-        }
-
-        .payment-section {
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .method {
-            transition: transform 0.3s;
-        }
-
-        .method:hover {
-            transform: scale(1.15);
-        }
-
-        .method img {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
-        }
-
-        .conversion-section {
-            text-align: center;
-            margin: 4rem 0;
-        }
-
-        .conversion-card {
-            background: rgba(76, 175, 80, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            display: inline-block;
-            border: 2px solid var(--primary-color);
-        }
-
-        .conversion-card p {
-            font-size: 1.3rem;
-            margin: 0;
-            color: var(--secondary-color);
         }
 
         .discord-float {
@@ -219,7 +173,7 @@
             left: 20px;
             background: #5865F2;
             color: white;
-            padding: 15px 25px;
+            padding: 10px 20px;
             border-radius: 30px;
             display: flex;
             align-items: center;
@@ -256,27 +210,23 @@
             color: var(--primary-color);
         }
 
-        /* إضافة النجوم والماس المتحركة */
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite ease-in-out;
-        }
-
-        .diamond {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: url('diamond.png') no-repeat center/contain;
-            animation: float 5s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            .price {
+                font-size: 1.8rem;
+            }
+            .features-list li {
+                font-size: 0.9rem;
+            }
+            .floating-character {
+                width: 100px;
+            }
+            .discord-float {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -287,13 +237,6 @@
         <div></div>
         <div></div>
         <div></div>
-        <!-- إضافة النجوم -->
-        <div class="star" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="star" style="top: 30%; left: 50%; animation-delay: 1s;"></div>
-        <div class="star" style="top: 70%; left: 80%; animation-delay: 2s;"></div>
-        <!-- إضافة الماس -->
-        <div class="diamond" style="top: 15%; left: 70%; animation-duration: 6s;"></div>
-        <div class="diamond" style="top: 60%; left: 30%; animation-duration: 7s;"></div>
     </div>
 
     <div class="floating-character">
@@ -356,28 +299,6 @@
                     <li><i class="fas fa-coins"></i> 400 ألف شوب</li>
                     <li><i class="fas fa-gem"></i> 4 ستاكات دايموند</li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="conversion-section">
-            <h2><i class="fas fa-coins"></i> نظام التحويل المالي</h2>
-            <div class="conversion-card">
-                <p>1 دولار = 15 ألف شوب</p>
-            </div>
-        </div>
-
-        <div class="payment-section">
-            <h2><i class="fas fa-credit-card"></i> وسائل الدفع المتاحة</h2>
-            <div class="payment-methods">
-                <div class="method">
-                    <img src="stc-pay.png" alt="STC Pay">
-                </div>
-                <div class="method">
-                    <img src="urpay.png" alt="URPay">
-                </div>
-                <div class="method">
-                    <img src="burraq.png" alt="برق">
-                </div>
             </div>
         </div>
 
