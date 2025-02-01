@@ -1,164 +1,103 @@
-/* style.css */
-:root {
-    --main-bg: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    --gold: #ffd700;
-    --diamond: #b9f2ff;
-    --platinum: #e5e4e2;
-    --vip: #ff69b4;
-}
-
+/* إصلاح لون الخلفية ليكون داكنًا */
 body {
     font-family: 'Tajawal', sans-serif;
-    background: var(--main-bg);
+    background: #121212; /* لون أسود داكن ثابت */
     color: #fff;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* منع الانزلاق الأفقي */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
+/* تعديل لون العنوان */
 .main-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-shadow: 0 0 15px rgba(255,215,0,0.5);
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    margin-bottom: 2rem;
 }
 
-.packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
+/* تعديل البطاقات */
 .package-card {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 1.5rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .package-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.package-header {
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-}
-
+/* تعديل الأسعار */
 .price {
     font-size: 2rem;
     font-weight: bold;
-    margin: 0.5rem 0;
-    color: var(--gold);
+    color: #ffd700;
 }
 
+/* تحسين الأيقونات في قائمة المزايا */
 .features-list {
     list-style: none;
     padding: 0;
+    text-align: right;
 }
 
 .features-list li {
-    padding: 0.8rem 0;
     display: flex;
     align-items: center;
     gap: 0.7rem;
+    padding: 0.8rem 0;
 }
 
 .features-list i {
-    color: var(--gold);
+    color: #ffd700;
     width: 25px;
 }
 
-/* ألوان خاصة لكل حزمة */
-.diamond .price { color: var(--diamond); }
-.platinum .price { color: var(--platinum); }
-.vip .price { color: var(--vip); }
-
-.floating-character {
+/* زر الديسكورد */
+.discord-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 200px;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.payment-methods {
+    bottom: 70px; /* رفعه قليلاً عن الأسفل */
+    left: 20px;
+    background: #5865F2;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
 }
 
-.method {
-    text-align: center;
-    transition: transform 0.3s;
+.discord-float:hover {
+    transform: translateY(-3px);
 }
 
-.method:hover {
-    transform: scale(1.1);
-}
+/* جعل النص متناسقًا في الجوال */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
 
-.method img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
-}
+    .main-title {
+        font-size: 1.8rem;
+    }
 
-.conversion-section {
-    text-align: center;
-    margin: 4rem 0;
-}
+    .price {
+        font-size: 1.5rem;
+    }
 
-.conversion-card {
-    background: rgba(0,0,0,0.3);
-    padding: 2rem;
-    border-radius: 15px;
-    display: inline-block;
+    .features-list li {
+        font-size: 0.9rem;
+    }
 }
-
-.command code {
-    background: rgba(255,255,255,0.1);
-    padding: 0.3rem 0.7rem;
-    border-radius: 5px;
-    font-family: monospace;
-}/* style.css */
-:root {
-    --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    --primary-color: #4CAF50;
-    --secondary-color: #ffeb3b;
-}
-
-.main-title {
-    color: var(--secondary-color);
-    font-size: 2.8rem;
-    letter-spacing: 2px;
-}
-
-.conversion-card {
-    background: rgba(76, 175, 80, 0.15);
-    border: 2px solid var(--primary-color);
-}
-
-.conversion-card p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    color: var(--secondary-color);
-}
-
-/* بقية التنسيقات كما هي مع تعديل الألوان */
