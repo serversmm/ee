@@ -1,12 +1,19 @@
-// JavaScript
-document.querySelectorAll('.buy-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        // منطق الشراء هنا
-        alert('سيتم توجيهك لصفحة الدفع');
-        
-        // يمكنك إضافة:
-        // 1. إضافة المنتج للسلة
-        // 2. توجيه لبوابة الدفع
-        // 3. تحديث الرصيد
+// جافا سكريبت لجعل التقييم تفاعليًا
+const stars = document.querySelectorAll('.rating-stars i');
+const ratingText = document.getElementById('rating-text');
+
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        const rating = star.getAttribute('data-rating');
+        stars.forEach((s, index) => {
+            if (index < rating) {
+                s.classList.remove('far');
+                s.classList.add('fas', 'active');
+            } else {
+                s.classList.remove('fas', 'active');
+                s.classList.add('far');
+            }
+        });
+        ratingText.textContent = `تقييمك: ${rating} من 5`;
     });
 });

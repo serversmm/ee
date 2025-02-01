@@ -1,45 +1,61 @@
-/* 🌟 إعداد الألوان والثيم */
 :root {
     --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    --gold: #ffd700;
-    --diamond: #b9f2ff;
     --primary-color: #4CAF50;
-    --secondary-color: var(--gold);
-    --text-color: #fff;
+    --secondary-color: #ffeb3b;
 }
 
-/* 🌟 إعدادات الصفحة الأساسية */
-html, body {
+body {
     font-family: 'Tajawal', Arial, sans-serif;
     background: var(--main-bg);
-    background-color: #121212; /* لون احتياطي */
-    background-attachment: fixed;
-    color: var(--text-color);
+    color: #fff;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
     overflow-x: hidden;
     position: relative;
+    font-size: 16px;
 }
 
-/* 🌟 الحاوية الرئيسية */
+/* خلفية متحركة خفيفة */
+.background-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-effects div {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
-/* 🌟 العنوان الرئيسي */
 .main-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: var(--secondary-color);
-    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    text-shadow: 0 0 15px rgba(255,235,59,0.3);
 }
 
-/* 🌟 شبكة الباقات */
 .packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -47,7 +63,6 @@ html, body {
     margin-bottom: 3rem;
 }
 
-/* 🌟 بطاقة الحزمة */
 .package-card {
     background: rgba(255,255,255,0.08);
     border-radius: 15px;
@@ -55,16 +70,13 @@ html, body {
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255,255,255,0.15);
     transition: all 0.3s ease;
-    text-align: center;
 }
 
-/* 🌟 تأثير عند تمرير الفأرة */
 .package-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
-/* 🌟 عنوان الباقة */
 .package-header {
     text-align: center;
     padding-bottom: 1rem;
@@ -72,7 +84,6 @@ html, body {
     border-bottom: 2px solid var(--primary-color);
 }
 
-/* 🌟 السعر */
 .price {
     font-size: 2rem;
     font-weight: bold;
@@ -81,17 +92,14 @@ html, body {
     transition: all 0.3s;
 }
 
-/* 🌟 تأثير عند تمرير الفأرة على السعر */
 .package-card:hover .price {
-    color: var(--gold);
+    color: #ffeb3b;
     transform: scale(1.1);
 }
 
-/* 🌟 قائمة المميزات */
 .features-list {
     list-style: none;
     padding: 0;
-    text-align: right;
 }
 
 .features-list li {
@@ -112,53 +120,61 @@ html, body {
     font-size: 1.4em;
 }
 
-/* 🌟 أيقونات المميزات */
 .features-list i {
     color: var(--secondary-color);
     width: 30px;
     font-size: 1.3rem;
 }
 
-/* 🌟 زر الديسكورد */
+.floating-character {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    animation: float 3s ease-in-out infinite;
+}
+
 .discord-float {
     position: fixed;
     bottom: 20px;
     left: 20px;
     background: #5865F2;
     color: white;
-    padding: 12px 20px;
+    padding: 10px 20px;
     border-radius: 30px;
-    text-decoration: none;
-    font-size: 14px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(88,101,242,0.3);
     transition: all 0.3s;
-    z-index: 999;
+    z-index: 1000;
 }
 
-/* 🌟 تأثير تمرير الفأرة */
 .discord-float:hover {
     transform: translateY(-3px);
     background: #4752C4;
 }
 
-/* 🌟 قسم وسائل الدفع */
-.payment-methods {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+.conversion-section {
+    text-align: center;
+    margin: 4rem 0;
 }
 
-.method img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+.conversion-card {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    display: inline-block;
+    border: 2px solid var(--primary-color);
 }
 
-/* 🌟 تقييم النجوم */
+.conversion-card p {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--secondary-color);
+}
+
 .rating-section {
     text-align: center;
     margin: 4rem 0;
@@ -180,24 +196,19 @@ html, body {
     color: var(--primary-color);
 }
 
-/* 🌟 تحسين مظهر الجوال */
 @media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
     .main-title {
         font-size: 2rem;
     }
-
     .price {
         font-size: 1.8rem;
     }
-
     .features-list li {
         font-size: 0.9rem;
     }
-
+    .floating-character {
+        width: 100px;
+    }
     .discord-float {
         padding: 8px 16px;
         font-size: 0.9rem;
