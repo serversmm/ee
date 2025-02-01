@@ -6,23 +6,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             --primary-color: #4CAF50;
             --secondary-color: #ffeb3b;
         }
 
         body {
             font-family: 'Tajawal', sans-serif;
-            background: var(--main-bg);
             color: #fff;
-            min-height: 100vh;
             margin: 0;
+            min-height: 100vh;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjoqYptpbINXyeNwqm-GRL45EHnndvjHC7zg&s') center/cover fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .main-title {
@@ -176,7 +189,7 @@
                 </div>
                 <ul class="features-list">
                     <li><i class="fas fa-shield-alt"></i> فل آرمر نذريات مطورة</li>
-                    <li><i class="fas fa-gem"></i> ستاكن دايموند</li>
+                    <li><i class="fas fa-gem"></i> ستاكين دايموند</li>
                 </ul>
             </div>
 
@@ -187,7 +200,7 @@
                     <div class="price">10$</div>
                 </div>
                 <ul class="features-list">
-                    <li><i class="fas fa-shield-alt"></i> فل آرمر نذريت مطور</li>
+                    <li><i class="fas fa-shield-alt"></i> فل آرمر نذرايت مطور</li>
                     <li><i class="fas fa-coins"></i> 100 ألف شوب</li>
                     <li><i class="fas fa-gem"></i> 3 ستاكات دايموند</li>
                 </ul>
@@ -201,7 +214,7 @@
                 </div>
                 <ul class="features-list">
                     <li><i class="fas fa-shield-alt"></i> فل آرمر نذرايت مطور</li>
-                    <li><i class="fas fa-coins"></i> 400 ألف شوب مطور</li>
+                    <li><i class="fas fa-coins"></i> 400 ألف شوب</li>
                     <li><i class="fas fa-gem"></i> 4 ستاكات دايموند</li>
                 </ul>
             </div>
